@@ -1,0 +1,45 @@
+﻿
+<h2 class="text-center p-4">Quiz Example</h2>
+
+<div class="border p-3 bg-light m-2">
+    var <a class="text-primary">questions</a> = [<br />
+    {<br />
+    &nbsp;&nbsp;  <a class="text-danger">prompt</a>: "What color are apples?\n(a) Red/Green\n\<br />
+    (b) Purple\n(c) Orange",<br />
+    &nbsp;&nbsp; answer: "a"<br />
+    },<br />
+
+    {<br />
+    &nbsp;&nbsp;  <a class="text-danger">prompt</a>: "What color are Bananas?\n(a) Teal\n\<br />
+    (b) Red\n(c) Yellow",<br />
+    &nbsp;&nbsp;  answer: "c"<br />
+    },<br />
+
+    {<br />
+    &nbsp;&nbsp; <a class="text-danger">prompt</a>: "What color are Strawbarries?\n(a) Yellow\n\<br />
+    (b) Red\n(c) Blue",<br />
+    &nbsp;&nbsp; answer: "b"<br />
+    },<br />
+    ]
+</div>
+
+<div class="border p-3 bg-light m-2">
+    var score = 0;<br />
+    for(var i = 0; i < <a class="text-primary">questions</a>.Length; i ++){<br />
+    &nbsp;&nbsp; var <a class="text-success">response</a> = window.<a class="text-danger">prompt</a>(<a class="text-primary">questions</a>[i].<a class="text-danger">prompt</a>);<br />
+    &nbsp;&nbsp; <br />if(<a class="text-success">response</a> == <a class="text-primary">questions</a>[i].answer){<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; score ++;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; alert("correct!");<br />
+    &nbsp;&nbsp; }<br />
+    &nbsp;&nbsp; else{<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; alert("wrong!")<br />
+    &nbsp;&nbsp;  }<br />
+    }
+</div>
+
+<div class="border p-3 bg-light m-2">
+    alert("you got " + score + "/" + <a class="text-primary">questions</a>.length)<br />
+    <br />Output Example: <a class=" text-success">You got 3/3</a>
+</div>
+
+

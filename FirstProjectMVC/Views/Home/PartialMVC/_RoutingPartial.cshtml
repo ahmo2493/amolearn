@@ -1,0 +1,59 @@
+﻿
+<h2 class="text-center p-4">Routing</h2>
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-4 text-center">Routing this routing page</h5>
+    <h5 class="p-2 text-success">MVC.cshtml:</h5>
+<pre style="white-space:pre-wrap">
+
+    <code>       
+&lt;div class="list-group"&gt;
+
+  &lt;a href="/Home/MVC/<a class="text-primary">Routing</a>" class="list-group-item list-group-item-action"><a class="font-weight-bold">Routing</a>&lt;/a&gt;
+
+&lt;/div&gt;
+
+    </code>   
+    <img src="~/Images/MVC/LeftScreenRed.svg" style="max-width: 200px" /> 
+</pre>
+    
+Note: We want the text "Routing" to appear in the https:// search<br />
+Note: List-group is the Left sidebar information
+
+</div>
+
+
+
+<div class="border p-3 bg-light m-2">
+    <pre style="white-space:pre-wrap">
+    <code>     
+<img src="~/Images/MVC/AtYellowIcon.svg" style="max-width: 15px">if((string)ViewData["Id"] == "<a class="text-primary">Routing</a>")
+{
+ &lt;partial name="~/Views/Home/ PartialMVC/ _RoutingPartial.cshtml"/&gt; 
+}
+    </code>   
+    <img src="~/Images/MVC/RightScreen1.svg" style="max-width: 200px" />
+    </pre> 
+    Note: If you press on the "Routing" displayed on the left sidebar, the _RoutingPartial page will be displayed like it is now.
+</div>
+
+
+
+
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-4 text-success">HomeController.cs</h5>
+
+    <pre style="white-space:pre-wrap">
+public IActionResult MVC(string id ="Routing")
+ {
+   ViewData["Id"] = id;
+    return View();
+ }
+</pre>
+    Note: You can set any page as the default in this case it's the "Routing" page
+    Note: template: "{controller=Home}/{action=Index}/{id?}");<br />
+    We assign id to "Id"
+
+</div>
+

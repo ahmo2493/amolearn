@@ -1,0 +1,32 @@
+﻿
+<h2 class="text-center p-4">Constructors</h2>
+
+<div class="border p-3 bg-light m-2">
+
+    Class Person<br />
+    {<br />
+    &nbsp;&nbsp; public string FirstName {get; set;}<br />
+    &nbsp;&nbsp; public string LastName {get; set;}<br />
+    &nbsp;&nbsp; public int Age {get; set;}<br />
+
+    <br />oublic Person(string first, string last, int age)<br />
+    &nbsp;&nbsp;{<br />
+    &nbsp;&nbsp;&nbsp; FirstName = first;<br />
+    &nbsp;&nbsp;&nbsp; LastName = last;<br />
+    &nbsp;&nbsp;&nbsp; Age = age;<br />
+    &nbsp;&nbsp; }<br />
+    }
+</div>
+
+<div class="border p-3 bg-light m-2">
+    Person Tom = new Person("Tom", "Hemsworth", 44);<br />
+
+    <br />Console.WriteLine($"{Tom.FirstName}{Tom.LastName}{Tom.age}");
+</div>
+
+<div class="border p-3 bg-light m-2">
+    Constructor will simplify this:<br />
+    Tom.FirstName = "Tom";<br />
+    Tom.LastName = "Hemsworth";<br />
+    Tom.Age = 44;
+</div>

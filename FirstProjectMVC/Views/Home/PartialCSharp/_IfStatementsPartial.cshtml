@@ -1,0 +1,57 @@
+﻿
+<h2 class="text-center p-4">If Statements</h2>
+
+<div class="border p-3 bg-light m-2">
+    if("Monday" == "Monday")<br />
+    {<br />
+    <a class="text-success">// Code within the curly brackets will execute because Monday equals Monday is TRUE.</a><br />
+    }
+</div>
+
+<div class="border p-3 bg-light m-2">
+    string todaysDate = "Monday";<br />
+    <br />if(todaysDate == "Monday")<br />
+    {<br />
+    <a class="text-success">// Code within the curly brackets will execute because Monday equals Monday is TRUE.</a><br />
+    }
+</div>
+
+<div class="border p-3 bg-light m-2">
+    string todaysDate = "Tuesday";<br />
+
+    <br /><br />if (todaysDate == "Monday")<br />
+    {<br />
+    &nbsp;&nbsp; Console.WriteLine("Today is Monday")<br />
+    }<br />
+    else  <br />
+    {<br />
+    &nbsp;&nbsp; Console.WriteLine("Today is NOT Monday") <br />
+    }<br />
+    <br /><a class="text-success"> Output: "Today is NOT Monday".</a><br />
+</div>
+
+<div class="border p-3 bg-light m-2">
+    string todaysDate = "Friday";<br />
+
+    <br /><br />if (todaysDate == "Monday")<br />
+    {<br />
+    &nbsp;&nbsp; Console.WriteLine("Today is Monday")<br />
+    }<br />
+    else if (todaysDate == "Tuesday") <br />
+    {<br />
+    &nbsp;&nbsp; Console.WriteLine("Today is Tuesday") <br />
+    }<br />
+
+    else if (todaysDate == "Wednesday") <br />
+    {<br />
+    &nbsp;&nbsp; Console.WriteLine("Today is Wednesday") <br />
+    }<br />
+    else<br />
+    {<br />
+    &nbsp;&nbsp; Console.WriteLine("Today is not Monday, Tuesday or Wednesday") <br />
+    }<br />
+    <br /><a class="text-success"> Output: "Today is not Monday, Tuesday or Wednesday".</a><br />
+</div>
+
+
+

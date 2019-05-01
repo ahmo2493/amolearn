@@ -1,0 +1,60 @@
+﻿
+<h2 class="text-center p-4">Dropdown Entry</h2>
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-4 text-center">Add New Entry On Click</h5>
+    <h5 class="p-2 text-success">MenuCategoryEntry.cshtml:</h5>
+<pre style="white-space:pre-wrap">
+
+    <code>
+
+&lt;form method="post"&gt;
+
+ &lt;div id="<a class="text-primary">firstdiv</a>" class="mb-3"&gt;
+
+
+   &lt;i class="fas fa-fish btn  btn-sm border text-secondary bg-white pt-2" style="padding:-5px;"&lt;/i&gt;
+
+   &lt;input type="text" class="form-control" value="" name="EntryBoxCategory" placeholder="seafood" aria-label="Username" aria-describedby="basic-addon1"&gt;
+ 
+
+ &lt;/div&gt;
+
+   &lt;button type="button" value="add dynamic" class="btn btn-primary btn-sm" onclick="DynamicText()">+Add&lt;/button&gt;
+
+   &lt;input class="float-right mt-5" type="submit" value="submit" /&gt;
+&lt;/form&gt;
+ 
+    </code>   
+</pre>
+
+       
+</div>
+
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-4 text-center">Add some Javascript magic</h5>
+    <h5 class="p-2 text-success">Site.js:</h5>
+<pre>
+    <code>
+function DynamicText() {
+var division = document.createElement('DIV');
+division.innerHTML = DynamicTextBox("");
+document.getElementById("<a class="text-primary">firstdiv</a>").appendChild(division);
+}
+
+function DynamicTextBox(value) {
+return '&lt;div class="input-group mb-3"&gt;&lt;button type="button" class="btn btn-primary btn-sm border text-secondary bg-white" onclick="ReTextBox(this)" value="X"&gt;X&lt;/button&gt;&lt;input type="text" class="form-control" value="" name="EntryBoxCategory" aria-label="Username" aria-describedby="basic-addon1"&gt;&lt;/div&gt;';
+}
+
+function ReTextBox(div) {
+document.getElementById("<a class="text-primary">firstdiv</a>").removeChild(div.parentNode.parentNode);
+}
+ <a class="text-success">Note: "function DynamicTextBox(value)" will create and style the new entry box</a>
+   <a class="text-success">Note: When the "Add" button is pressed a new entry box appears</a>
+    </code>
+</pre>
+    <img src="~/Images/MVC/AddOn1.jpg" style="width: 100%; max-width: 500px" />
+</div>
+
+

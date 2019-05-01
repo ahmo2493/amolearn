@@ -1,0 +1,94 @@
+﻿
+<h2 class="text-center p-4">Login</h2>
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-4 text-center">Create Identity</h5>
+    <h5 class="p-2 text-success">ASP.NET Core 2.2</h5>
+<pre style="white-space:pre-wrap">
+
+<code>
+Select File > New > Project.
+Select ASP.NET Core Web Application. Name the project MyProject. Click OK.
+Select an ASP.NET Core Web Application, then select <a class="text-primary">Change Authentication.</a>
+Select <a class="text-primary">Individual User Accounts</a> and click OK.
+</code>   
+   
+</pre>
+</div>
+
+<div class="border p-3 bg-light m-2">
+    <pre style="white-space:pre-wrap">
+From Solution Explorer, right-click on the project > Add > New Scaffolded Item.
+From the left pane of the Add Scaffold dialog, select Identity > ADD.
+In the ADD Identity dialog, select all the options.
+
+<a class="text-success">Note: All those pages will be added to your Solution Explorer</a>
+    </pre>
+</div>
+
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-4 text-center">Add Connection String</h5>
+    <pre style="white-space:pre-wrap">
+Open appSetting.json
+
+"DefaultConnection": <a class="text-danger">"Server=tcp:amolearnse . . .....</a>
+
+<a class="text-success">The connection string will send the login data into your database tables </a>
+
+Go to Tools > NuGet Package Manager > Package Manager Console
+
+Add-Migration CreateIdentitySchema
+
+Update-Database 
+    </pre>
+</div>
+
+
+<div class="border p-3 bg-light m-2">
+   
+
+    <h5 class="p-4 text-center">This code will generate in your Starup.cs</h5>
+    <pre style="white-space:pre-wrap">
+
+  services.AddDbContext&lt;ApplicationDbContext&gt;
+    (options =>
+    options.UseSqlServer(
+    Configuration.GetConnectionString("DefaultConnection")));
+    services.AddDefaultIdentity&lt;IdentityUser&gt;
+    ()
+    .AddDefaultUI(UIFramework.Bootstrap4)
+    .AddEntityFrameworkStores&lt;ApplicationDbContext&gt;
+    ();
+
+
+<a class="p-4 text-center">Edit Password Entry (Optional)</a>
+<a class="text-success">Paste the text in blue in the Startup.cs underneath the text above</a>
+
+    <a class="text-primary">
+services.Configure<IdentityOptions>(options =>
+{</a>
+<a class="text-success">// Default Password settings.</a><a class="text-primary">
+ options.Password.RequireDigit = true;
+ options.Password.RequireLowercase = true;
+ options.Password.RequireNonAlphanumeric = false;
+ options.Password.RequireUppercase = true;
+ options.Password.RequiredLength = 6;
+ options.Password.RequiredUniqueChars = 1;
+});
+</a>
+</pre>
+</div>
+
+
+<div class="border p-3 bg-light m-2">
+    <pre style="white-space:pre-wrap">
+<a class="text-success">[Authorize]</a>
+public IActionResult Privacy()
+{
+  return View();
+}
+
+<a class="text-success">Note: With [Authorize], if you are not logged in or not authorized you will be redirected to the log in page</a>
+</pre>
+</div>

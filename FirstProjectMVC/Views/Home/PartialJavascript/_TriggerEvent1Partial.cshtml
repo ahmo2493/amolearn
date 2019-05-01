@@ -1,0 +1,30 @@
+﻿
+<h2 class="text-center p-4">Trigger Event #1</h2>
+
+<div class="border p-3 bg-light m-2">
+    <p class="p-1"> Note: Using "onclick" allows you to perform any javascript code if the item is clicked.</p><br />
+    <code>&lt;button id="button" onclick="alert('you clicked me')"&gt;</code> Click Me  <code>&lt;/button&gt;</code>
+</div>
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-4">Same thing but with function /method</h5>
+    <code>&lt;button id="button" onclick="handleClick()"&gt;</code>Click Me <code>&lt;/button&gt;</code><br />
+
+    <p class="p-5">
+        javascript: function handleClick(){<br />
+        alert("you clicked me");}
+    </p>
+</div>
+
+<div class="border p-3 bg-light m-2">
+    <p >Instead of a popup alert box we will alter the button itself by adding "this" inside the function brackets.</p><br />
+
+    <p><code>&lt;button id="button" onclick="handClick(this)"&gt;</code> Click Me <code>&lt;/button&gt;</code></p><br />
+
+     
+    <p>javascript: function handleClick(change){<br />
+        change.innerHTML ="clicked" }</p><br />
+    
+    <p>change.style="background-color:blue;"</p>
+
+</div>

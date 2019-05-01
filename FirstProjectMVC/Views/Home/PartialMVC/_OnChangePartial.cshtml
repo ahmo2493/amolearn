@@ -1,0 +1,66 @@
+﻿
+<h2 class="text-center p-4">Onchange</h2>
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-4 text-center">Switch page once item selected</h5>
+    <p class="p-2 text-success">MenuTableEntry.cshtml</p>
+<pre style="white-space:pre-wrap">
+    <code>       
+&lt;h3&gt;How many tables do you have?&lt;/h3&gt;
+
+<a class="text-danger">&lt;form&gt;</a>
+ &lt;div class="form-group"&gt;
+
+ &lt;select multiple class="form-control" <a class="text-primary">name="dropTable"</a> id="exampleFormControlSelect2" <a class="text-primary">onchange="this.form.submit()"</a>&gt;
+
+  &lt;option&gt;1&lt;/option&gt;
+  &lt;option&gt;2&lt;/option&gt;
+  &lt;option&gt;3&lt;/option&gt;
+  &lt;option&gt;4&lt;/option&gt;
+  &lt;option&gt;5&lt;/option&gt;
+  &lt;option&gt;6&lt;/option&gt;
+
+ &lt;/select&gt;
+
+ &lt;/div&gt;
+<a class="text-danger">&lt;/form&gt;</a>
+
+<a class="text-success">Note: Once the item is clicked in the dropdown menu the onchange will submit the value "dropTable"</a>
+
+<a class="text-success">Note: Anything that allows you to select a value should be inside a form</a>
+    </code>   
+  
+</pre>
+</div>
+
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-4 text-center">Switch page once item selected</h5>
+    <p class="p-2 text-success">HomeController.cs</p>
+    <pre style="white-space:pre-wrap">
+    <code>
+public IActionResult MenuTableEntry(string dropTable)
+{
+  if(dropTable != null)
+   {
+        <a class="text-primary">return</a> RedirectToAction(<a class="text-danger">"MenuCategoryEntry"</a>,new { id = dropTable });
+   }
+<a class="text-primary">return</a> View();
+}
+
+
+
+public IActionResult MenuCategoryEntry(string id = "")
+{
+  ViewData["tableNum"] = id;
+<a class="text-primary">return</a> View();
+}
+        </code>
+
+<a class="text-success">Note: you will be redirected to a new page only if a value was selected, RedirectToAction will transfer you to MenuCategoryEntry page.</a>
+
+<a class="text-success">Note: dropTable value was also sent in the controller "new {id = dropTable}".</a>
+
+    </pre>
+</div>
+

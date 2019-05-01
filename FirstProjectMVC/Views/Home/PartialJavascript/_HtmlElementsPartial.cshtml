@@ -1,0 +1,37 @@
+﻿
+<h2 class="text-center p-4">Accessing HTML Elements</h2>
+
+<div class="border p-3 bg-light m-2">
+    If you reference html id value in javascript you can then manipulate the code.
+</div>
+
+    <div class="border p-3 bg-light m-2">
+        <h5 class="p-4">HTML Code:</h5>
+
+        <code>&lt;body&gt;</code><br />
+
+        <code>&lt;h1 id="<a class="text-primary">header</a>"&gt;</code>Javascript<code>&lt;/h1&gt;</code><br />
+
+        <code>&lt;script src="script.js"&gt;</code> <code>&lt;/script&gt;</code><br />
+
+        <code>&lt;/body&gt;</code>   
+    </div>
+
+    <div class="border p-3 bg-light m-2">
+        <h5 class="p-4">Javascript Code:</h5>
+        var header = document.getElementById("<a class="text-primary">header</a>"); 
+    </div>
+
+    <div class="border p-3 bg-light m-2">
+        header.innerHTML = "Changed Text" &nbsp;&nbsp;&nbsp; <a class="text-success">Output: Changed Text</a> <br />
+        <div class="border p-3 bg-light m-2">
+            Note: When "script.js" is called; it will change the existing text inside the h1 tag,<br /> It's important to have src script.js under the text you wish to change.
+        </div>
+
+        header.style.color = "red"; &nbsp;&nbsp;&nbsp; <a class="text-success">Output:</a> <a class="text-danger">Javascript</a><br />
+
+       <br /> header.style.backgroundColor = "blue"; &nbsp;&nbsp;&nbsp; <a class="text-success">Output:</a> <a style="background-color:dodgerblue">Javascript</a>
+
+    </div>
+
+    

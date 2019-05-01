@@ -1,0 +1,175 @@
+﻿
+
+
+<div class="dropdown d-block d-sm-none d-none d-sm-block d-md-none" style="margin-top: -10px">
+
+    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select Page
+    </a>
+    <div class="dropdown-menu scrolltab-dropdown" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="/Home/Javascript/Basics">Basics</a>
+        <a class="dropdown-item" href="/Home/Javascript/Working-With-Strings">Working with Strings</a>
+        <a class="dropdown-item" href="/Home/Javascript/While-Loop">While Loop</a>
+        <a class="dropdown-item" href="/Home/Javascript/User-Input">User Input</a>
+        <a class="dropdown-item" href="/Home/Javascript/Trigger-Event-1">Trigger Event #1</a>
+        <a class="dropdown-item" href="/Home/Javascript/Trigger-Event-2">Trigger Event #2</a>
+        <a class="dropdown-item" href="/Home/Javascript/Timing">Timing</a>
+        <a class="dropdown-item" href="/Home/Javascript/Switch-Statements">Switch Statements</a>
+        <a class="dropdown-item" href="/Home/Javascript/Real-World-Object">Real World Object</a>
+        <a class="dropdown-item" href="/Home/Javascript/Quiz-Example">Quiz Example</a>
+        <a class="dropdown-item" href="/Home/Javascript/Password-Entry">Password Entry</a>
+        <a class="dropdown-item" href="/Home/Javascript/Object">Object</a>
+        <a class="dropdown-item" href="/Home/Javascript/Math">Math</a>
+        <a class="dropdown-item" href="/Home/Javascript/If-Statements">If Statement</a>
+        <a class="dropdown-item" href="/Home/Javascript/Function">Function</a>
+        <a class="dropdown-item" href="/Home/Javascript/Foreach-Loop">Foreach Loop</a>
+        <a class="dropdown-item" href="/Home/Javascript/For-Loop">For Loop</a>
+        <a class="dropdown-item" href="/Home/Javascript/Calculator">Calculator</a>
+        <a class="dropdown-item" href="/Home/Javascript/Array">Array</a>
+        <a class="dropdown-item" href="/Home/Javascript/Accessing-HTML-Elements">Accessing HTML Elements</a>
+
+    </div>
+    <div class="d-inline-block">
+        <form asp-controller="Home" asp-action="Javascript">
+            <input class="form-control mr-sm-2 topBotMarg " name="searchBar" type="text" placeholder="Search..." aria-label="Search">
+        </form>
+    </div>
+</div>
+
+<h2 class="text-center font-weight-bold text-white bg-secondary">Javascript</h2>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 bg-ligh d-none d-md-block">
+
+            <div class="sticky mt-4" style="max-width:300px">
+
+                <form asp-controller="Home" asp-action="Javascript">
+                    <input class="form-control mr-sm-2 topBotMarg " name="searchBar" type="text" placeholder="Search..." aria-label="Search">
+                </form>
+
+                <div class="scrollTab">
+
+                    <div class="list-group">
+                        <a href="/Home/Javascript/Basics" class="list-group-item list-group-item-action">Basics</a>
+                        <a href="/Home/Javascript/Working-With-Strings" class="list-group-item list-group-item-action">Working with Strings</a>
+                        <a href="/Home/Javascript/While-Loop" class="list-group-item list-group-item-action">While Loop</a>
+                        <a href="/Home/Javascript/User-Input" class="list-group-item list-group-item-action">User Input</a>
+                        <a href="/Home/Javascript/Trigger-Event-1" class="list-group-item list-group-item-action">Trigger Event #1</a>
+                        <a href="/Home/Javascript/Trigger-Event-2" class="list-group-item list-group-item-action">Trigger Event #2</a>
+                        <a href="/Home/Javascript/Timing" class="list-group-item list-group-item-action">Timing</a>
+                        <a href="/Home/Javascript/Switch-Statements" class="list-group-item list-group-item-action">Switch Statements</a>
+                        <a href="/Home/Javascript/Real-World-Object" class="list-group-item list-group-item-action">Real World Object</a>
+                        <a href="/Home/Javascript/Quiz-Example" class="list-group-item list-group-item-action">Quiz Example</a>
+                        <a href="/Home/Javascript/Password-Entry" class="list-group-item list-group-item-action">Password Entry</a>
+                        <a href="/Home/Javascript/Object" class="list-group-item list-group-item-action">Object</a>
+                        <a href="/Home/Javascript/Math" class="list-group-item list-group-item-action">Math</a>
+                        <a href="/Home/Javascript/If-Statements" class="list-group-item list-group-item-action">If Statements</a>
+                        <a href="/Home/Javascript/Function" class="list-group-item list-group-item-action">Function</a>
+                        <a href="/Home/Javascript/Foreach-Loop" class="list-group-item list-group-item-action">Foreach Loop</a>
+                        <a href="/Home/Javascript/For-Loop" class="list-group-item list-group-item-action">For Loop</a>
+                        <a href="/Home/Javascript/Calculator" class="list-group-item list-group-item-action">Calculator</a>
+                        <a href="/Home/Javascript/Array" class="list-group-item list-group-item-action">Array</a>
+                        <a href="/Home/Javascript/Accessing-HTML-Elements" class="list-group-item list-group-item-action">Accessing HTML Elements</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-9">
+          
+
+
+            @if ((string)ViewData["Js"] == "Basics")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_BasicPartial.cshtml" />
+            }
+
+            else if ((string)ViewData["Js"] == "Working-With-Strings")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_WorkingWithStringPartial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "While-Loop")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_WhileLoopPartial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "User-Input")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_UserInputPartial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "Trigger-Event-1")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_TriggerEvent1Partial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "Trigger-Event-2")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_TriggerEvent2Partial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "Timing")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_TimingPartial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "Switch-Statements")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_SwitchStatementsPartial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "Real-World-Object")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_RealWorldObjectPartial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "Quiz-Example")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_QuizExamplePartial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "Password-Entry")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_PasswordEntryPartial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "Object")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_ObjectPartial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "Math")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_MathPartial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "If-Statements")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_IfStatementsPartial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "Function")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_FunctionPartial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "Foreach-Loop")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_ForeachLoopPartial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "For-Loop")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_ForLoopPartial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "Calculator")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_CalculatorPartial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "Array")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_ArrayPartial.cshtml" />
+            }
+            else if ((string)ViewData["Js"] == "Accessing-HTML-Elements")
+            {
+                <partial name="~/Views/Home/PartialJavascript/_HtmlElementsPartial.cshtml" />
+            }
+            else
+            {
+                <partial name="~/Views/Home/PartialJavascript/_PageNotFoundPartial.cshtml" />
+            }
+
+
+        </div>
+    </div>
+</div>
+

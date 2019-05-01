@@ -1,0 +1,33 @@
+﻿
+<h2 class="text-center p-4">Get Set Properties</h2>
+
+<div class="border p-3 bg-light m-2">
+    class Person<br />
+    {<br />
+    &nbsp;&nbsp; private int age; &nbsp;&nbsp;<a class="text-success">// Private is always lowercase</a><br />
+    &nbsp;&nbsp; public int Age<br />
+    &nbsp;&nbsp; {<br />
+    get { return age; }<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; set<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; if (value >= 0)<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; age = value;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; else<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("Wrong Entry");<br />
+    &nbsp;&nbsp;&nbsp;&nbsp; }<br />
+    &nbsp;&nbsp; }<br />
+    }
+</div>
+
+<div class="border p-3 bg-light m-2">
+    Person Tom = new Person();<br />
+    Tom.Age = 66;<br />
+
+    <br />Console.WriteLine($"You are {Tom.Age} years old");<br />
+
+    Console.ReadLine();
+</div>
+
+<div class="border p-3 bg-light m-2">
+    Note: If a negative number was entered for the age the Get Set would give an error message
+</div>

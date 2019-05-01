@@ -1,0 +1,31 @@
+﻿
+<h2 class="text-center p-4">Trigger Event #2</h2>
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-4">HTML</h5>
+
+    <code>&lt;button id="<a class="text-primary">button</a>" onclick="handleClick(this)"&gt;</code>Click Me<code>&lt;/button&gt;</code>
+</div>
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-4">Javascript</h5>
+    <p>var button = document.getElementByld("<a class="text-primary">button</a>");</p>
+
+    button.addEventListener("<a class="text-success">mouseover</a>", function(){
+    this.style="box-shadow:5px 5px 5px gray";<br />
+    });
+
+    <p>
+        <br /> button.addEventListener("<a class="text-success">mouseout</a>", function(){
+    this.style="";  <br />
+    });
+    </p>
+</div>
+
+<div class="border p-3 bg-light m-2">
+    NOTE: The "mouseover" event will trigger a box-shadow to appear on the button and the<br />
+    "mouseout" event will remove the box-shadow when you hover away from the button.<br />
+    <br /><a class="text-primary">"on" is not needed in javascript only in html</a><br />
+    javascript: <a class="text-success">mouseover</a><br />
+    html: <a class="text-primary">on</a><a class="text-success">mouseover</a>
+</div>

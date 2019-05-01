@@ -1,0 +1,42 @@
+﻿
+<h2 class="text-center p-4">Object / class</h2>
+
+<div class="border p-3 bg-light m-2">
+    var person = {<br />
+    &nbsp;  name: "Mike",<br />
+    &nbsp;  age: 33,<br />
+    &nbsp; isMale: true,<br />
+    &nbsp; occupation: "programmer"<br />
+    };
+</div>
+
+<div class="border p-3 bg-light m-2">
+    person = "Joe";  &nbsp;&nbsp;&nbsp;  <a class="text-success">Name as been changed to Joe</a> <br />
+    document.write(person.name); &nbsp;&nbsp;&nbsp; <a class="text-success">Output: Joe</a>
+</div>
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-4">Get Object Length</h5>
+
+    var phrase = "strings are cool";<br />
+    document.write(phrase.length);<br />
+</div>
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-4">Function Inside of Object</h5>
+    var person = {<br />
+    &nbsp; name: "Mike",<br />
+    &nbsp; age: 33,<br />
+    &nbsp; isMale: true,<br />
+    &nbsp; occupation: "programmer"<br />
+
+
+    <br /><a class="text-primary">printName</a>: function(){<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.write("<code>&lt;h1&gt;</code>" + this.name + "<code>&lt;/h1&gt;</code>")<br />
+    &nbsp;&nbsp;}<br />
+    },<br />
+    person.printName();<br />
+    <br />Note: "this" function refers to the person object <br />
+    Note: "<a class="text-primary">printName</a>" is written just like all the top values with a colon<br />
+</div>
+<a class="text-success"></a>

@@ -1,0 +1,99 @@
+﻿
+<div class="dropdown d-block d-sm-none d-none d-sm-block d-md-none" style="margin-top: -10px">
+    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select Page
+    </a>
+    <div class="dropdown-menu scrolltab-dropdown" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="/Home/MVC/Routing">Routing</a>
+        <a class="dropdown-item" href="/Home/MVC/Search">Search</a>
+        <a class="dropdown-item" href="/Home/MVC/Login">Login</a>
+        <a class="dropdown-item" href="/Home/MVC/Onchange">Onchange</a>
+        <a class="dropdown-item" href="/Home/MVC/Adding-Smart-Entry">Adding Smart Entry</a>
+        <a class="dropdown-item" href="/Home/MVC/Using-Form">Using Form</a>
+        <a class="dropdown-item" href="/Home/MVC/Loop-Items">Loop Items</a>
+        <a class="dropdown-item" href="/Home/MVC/Tag-Helper">Tag Helper</a>
+
+
+    </div>
+    <div class="d-inline-block">
+        <form asp-controller="Home" asp-action="MVC">
+            <input class="form-control mr-sm-2 topBotMarg " name="searchBar" type="text" placeholder="Search..." aria-label="Search">
+        </form>
+    </div>
+</div>
+
+<h2 class="text-center font-weight-bold text-white bg-secondary">ASP.NET MVC</h2>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 bg-ligh d-none d-md-block">
+
+            <div class="sticky mt-4" style="max-width:300px">
+
+                <form asp-controller="Home" asp-action="MVC">
+                    <input class="form-control mr-sm-2 topBotMarg " name="searchBar" type="text" placeholder="Search..." aria-label="Search">
+                </form>
+
+                <div class="scrollTab">
+
+                    <div class="list-group">
+                        <a href="/Home/MVC/Routing" class="list-group-item list-group-item-action">Routing</a>
+                        <a href="/Home/MVC/Search" class="list-group-item list-group-item-action">Search</a>
+                        <a href="/Home/MVC/Login" class="list-group-item list-group-item-action">Login</a>
+                        <a href="/Home/MVC/Onchange" class="list-group-item list-group-item-action">Onchange</a>
+                        <a href="/Home/MVC/Adding-Smart-Entry" class="list-group-item list-group-item-action">Adding Smart Entry</a>
+                        <a href="/Home/MVC/Using-Form" class="list-group-item list-group-item-action">Using-Form</a>
+                        <a href="/Home/MVC/Loop-Items" class="list-group-item list-group-item-action">Loop Items</a>
+                        <a href="/Home/MVC/Tag-Helper" class="list-group-item list-group-item-action">Tag Helper</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-9">
+
+            @if ((string)ViewData["Id"] == "Routing")
+            {
+                <partial name="~/Views/Home/PartialMVC/_RoutingPartial.cshtml" />
+            }
+            else if ((string)ViewData["Id"] == "Search")
+            {
+                <partial name="~/Views/Home/PartialMVC/_SearchPartial.cshtml" />
+            }
+            else if ((string)ViewData["Id"] == "Login")
+            {
+                <partial name="~/Views/Home/PartialMVC/_LoginPartial.cshtml" />
+            }
+            else if ((string)ViewData["Id"] == "Onchange")
+            {
+                <partial name="~/Views/Home/PartialMVC/_OnChangePartial.cshtml" />
+            }
+            else if ((string)ViewData["Id"] == "Adding-Smart-Entry")
+            {
+                <partial name="~/Views/Home/PartialMVC/_AddingSmartEntryPartial.cshtml" />
+            }
+            else if ((string)ViewData["Id"] == "Using-Form")
+            {
+                <partial name="~/Views/Home/PartialMVC/_UsingFormPartial.cshtml" />
+            }
+            else if ((string)ViewData["Id"] == "Loop-Items")
+            {
+                <partial name="~/Views/Home/PartialMVC/_LoopItemsPartial.cshtml" />
+            }
+            else if ((string)ViewData["Id"] == "Tag-Helper")
+            {
+                <partial name="~/Views/Home/PartialMVC/_TagHelperPartial.cshtml" />
+            }
+            else
+            {
+                <partial name="~/Views/Home/PartialMVC/_PageNotFoundPartial.cshtml" />
+            }
+
+
+        </div>
+    </div>
+</div>
+
+

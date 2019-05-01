@@ -1,0 +1,93 @@
+﻿
+<h2 class="text-center p-4">Loop Items</h2>
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-2 text-success">MenuEntry.cs</h5>
+<pre>
+    <code>
+namespace MenuProject1.SQLDatabase
+{
+   public class <a class="text-primary">MenuEntry</a>
+   {
+    public int Id { get; set; }
+    public string UserName { get; set; }
+    public int Tables { get; set; }
+    public string Categories { get; set; }
+    public string Items { get; set; }
+    public decimal Prices { get; set; }
+   }
+}
+ 
+    </code>      
+</pre>
+
+</div>
+
+
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-2 text-success">HomeController.cs</h5>
+<pre>
+    <code>
+
+Using MenuProject.SQLDatabse;
+
+<a class="text-success">Create this list outside the controller method</a>
+
+public static List&lt;<a class="text-primary">MenuEntry</a>&gt; FoodItems = new List&lt;<a class="text-primary">MenuEntry</a>&gt;();
+
+
+
+ <a class="text-success">[HttpGet]</a>
+public IActionResult MenuCategoryEntry()
+{
+
+return View(FoodItems);
+}
+
+ <a class="text-success">[HttpPost]</a>
+public IActionResult MenuCategoryEntry(string EntryBoxCategory,string EntryBoxItem,string EntryBoxPrice, string id)
+{
+decimal priceNum = decimal.Parse(EntryBoxPrice);
+
+FoodItems.Add(new MenuEntry() { Categories = EntryBoxCategory, Items = EntryBoxItem, Prices = priceNum});
+
+
+return View(FoodItems);
+}
+    </code>      
+</pre>
+
+</div>
+
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-2 text-success">MenuCategoryEntry.cs</h5>
+<pre>
+    <code>
+Note: this text should be at the top of the page
+Note: The info in the List is from <a class="text-primary">MenuEntry</a>
+
+<img src="~/Images/MVC/AtYellowIcon.svg" style="max-width: 15px">model List&lt;MenuProject1.SQLDatabase.MenuEntry&gt;
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+&lt;Form method="post"&gt;
+<img src="~/Images/MVC/AtYellowIcon.svg" style="max-width: 15px">foreach (var item in Model)
+{
+&lt;p class=" font-weight-bold rounded pl-2" style="background-color:gainsboro"&gt;  <img src="~/Images/MVC/AtYellowIcon.svg" style="max-width: 15px">item.Categories &lt;/p&gt;
+<img src="~/Images/MVC/AtYellowIcon.svg" style="max-width: 15px">item.Items ---- $<img src="~/Images/MVC/AtYellowIcon.svg" style="max-width: 15px">item.Prices
+}
+&lt;/Form&gt;
+
+<a class="text-success">model is used because you are returning a value in the controller "return View(FoodItems)"</a>
+
+<a class="text-success">The Form on this page was filled out and a +ADD button was pressed.
+Those entries were sent to the controller and placed in a list called "FoodItems".
+Then We display every entry here with the foreach loop</a>
+
+        Will not work without Form method="post"
+
+<img src="~/Images/MVC/MenuEntry.png" style="width: 100%" />
+    </code>
+</pre>
+</div>

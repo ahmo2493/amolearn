@@ -1,0 +1,49 @@
+﻿
+<h2 class="text-center p-4">Using Form</h2>
+
+<div class="border p-3 bg-light m-2">
+    
+<pre style="white-space:pre-wrap">
+    <code>
+
+&lt;form method="POST">
+  &lt;input type="text" id="firstName" placeholder="Your name goes here" name="firstName" /&gt;
+  &lt;input type="submit" /&gt;
+&lt;/form&gt;
+
+    </code>      
+</pre>
+
+</div>
+
+
+<div class="border p-3 bg-light m-2">
+
+<pre style="white-space:pre-wrap">
+    <code>
+
+public class FormController : Controller
+{
+  <a class="text-primary">[HttpGet]</a> 
+  public IActionResult Index()
+  {
+    return View();
+  }
+
+  <a class="text-primary">[HttpPost]</a>
+  public IActionResult Index(string firstName)
+  {
+    return Content($"Hello {firstName}");
+  }
+}
+
+<a class="text-success">Another controller is created with the same name to handle the form entry</a>
+
+ <a class="text-success">[HttpGet] will run first</a>
+
+ <a class="text-success">[HttpPost] will run the second method ONLY when a form entry occurs</a>
+
+Note: Always create two controller methods when working with forms
+    </code>
+</pre>
+</div>

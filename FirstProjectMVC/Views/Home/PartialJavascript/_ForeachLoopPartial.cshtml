@@ -1,0 +1,31 @@
+﻿
+<h2 class="text-center p-4">Foreach Loop</h2>
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-4">Basic Example</h5>
+
+    var friends = ["Oscar", "Myle", "Kevin"];<br />
+    <br />friends.forEach(function(item){<br />
+    &nbsp;&nbsp;document.write(item + "<code>&lt;br&gt;</code>")<br />
+    });
+</div>
+
+<div class="border p-3 bg-light m-2">
+    <h5 class="p-4">Advanced Example</h5>
+    var books = [<br />
+    {<br />
+    &nbsp;&nbsp; title: "Herry Potter",<br />
+    &nbsp;&nbsp; author: "Jk Rowling",<br />
+    &nbsp;&nbsp; page: 300<br />
+    },<br />
+    {<br />
+    &nbsp;&nbsp; title: "Green Eggs & Ham",<br />
+    &nbsp;&nbsp; author: "Dr.Seuss",<br />
+    &nbsp;&nbsp; pages: 25<br />
+    }<br />
+    ]<br />
+    <br />books.forEach(function(item){<br />
+    &nbsp;&nbsp; document.write(item.title + "<code>&lt;br&gt;</code>")<br />
+    &nbsp;&nbsp; document.write(item.author + "<code>&lt;br&gt;</code><code>&lt;br&gt;</code>")<br />
+    });
+</div>

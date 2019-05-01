@@ -1,0 +1,163 @@
+﻿
+<h2 class="text-center p-4">Search</h2>
+
+<div class="border p-3 bg-light m-2">
+    <h2 class="p-4">Long Way</h2>
+    <h5 class="p-4">HomeController</h5>
+
+<pre>
+    <code>
+
+public IActionResult Javascript(string <a class="text-danger">searchBar</a>, string id = "Basics")
+{
+
+<a class="text-success">ViewData["Js"] = id;</a>
+
+<a class="text-warning"></a>
+<a class="text-primary">using</a> (<a class="text-primary">var</a> db = <a class="text-primary">new</a> BasicJSDBContext())
+{
+<a class="text-primary">var</a> <a class="text-warning">stringInfo</a> = <a class="text-primary">from</a> m in db.BasicJS
+    <a class="text-primary">select</a> m;
+
+
+<a class="text-primary">if</a> (!String.IsNullOrEmpty(<a class="text-danger">searchBar</a>))
+{
+    <a class="text-warning">stringInfo</a> = db.BasicJS.Where(x => x.Category.Contains(<a class="text-danger">searchBar</a>));
+
+<a class="text-primary">var</a> stringInfoList = <a class="text-warning">stringInfo</a>.ToList();
+
+<a class="text-primary">if</a>(stringInfoList.Count != 0)
+  {
+    <a class="text-success">ViewData["Js"]</a> = stringInfoList[0].Category;
+  }
+<a class="text-primary">else</a>
+  {
+    <a class="text-success">ViewData["Js"]</a> = "Not found";
+  }
+}
+
+return View();
+}
+
+}
+
+    </code>
+</pre>
+
+</div>
+
+@*short way*@
+
+<div class="border p-3 bg-light m-2">
+    <h2 class="p-4">Short Way</h2>
+    <h5 class="p-4">HomeController</h5>
+
+<pre>
+    <code>
+
+public IActionResult Javascript(string <a class="text-danger">searchBar</a>, string id = "Basics")
+{
+
+  <a class="text-success">ViewData["Js"] = id;</a>
+
+        
+<a class="text-primary">using</a> (<a class="text-primary">var</a> db = <a class="text-primary">new</a> BasicJSDBContext())
+{
+   List<a class="text-primary">&lt;BasicJS&gt;</a><a class="text-warning">stringInfo</a> = null;
+
+<a class="text-primary">if</a> (!String.IsNullOrEmpty(<a class="text-danger">searchBar</a>))
+{
+ <a class="text-warning">stringInfo</a> = db.BasicJS.Where(x => x.Category.Contains(<a class="text-danger">searchBar</a>)).ToList();
+
+
+ <a class="text-primary">if</a>(<a class="text-warning">stringInfo</a>.Count != 0)
+ {
+  <a class="text-success">ViewData["Js"]</a> = <a class="text-warning">stringInfo</a>[0].Category;
+ }
+ <a class="text-primary">else</a>
+ {
+  <a class="text-success">ViewData["Js"]</a> = "Not found";
+ }
+}
+
+  return View();
+}
+
+}
+
+    </code>
+</pre>
+
+</div>
+
+@*walk through*@
+<div class="border p-3 bg-light m-2">
+    <h2 class="p-4">Short Way Break Down</h2>
+    <pre style="white-space:pre-wrap">
+    <code>
+1.<a class="text-primary">ViewData["Js"] = id;</a> was created in the controller which means it can be accessed in the view.
+
+2.The database logic must be inside of the
+        <a class="text-primary">using (var db = new BasicJSDBContext())</a>
+
+3.<a class="text-primary">List&lt;BasicJS&gt;stringInfo = null;</a> needs to be set to null do to the fact that .Contains will add to string info.
+
+4.<a class="text-primary">if (!String.IsNullOrEmpty(searchBar))</a> means if the searchBar has text inside of it; do something.
+
+5.<a class="text-primary">db.BasicJS.Where</a> will search the entirety of the database, you only use a foreach loop if you want to display multiple items.
+
+6.<a class="text-primary">Contains(searchBar)).ToList();</a> ends with a ToList() because it’s going inside strinInfo witch is a list.
+
+7.<a class="text-primary">if (stringInfo.Count != 0)</a> means if you have an item in stringInfo do something, .count can only be used on a list keep that in mind.
+
+8.<a class="text-primary">ViewData["Js"] = stringInfo[0].Category;</a> the searched value is saved to the ViewData["Js"] witch will bring up that page.
+
+9.Else ViewData["Js"] = "Not found";
+        </code>
+</pre>
+</div>
+
+
+    @*controller*@
+
+    <div class="border p-3 bg-light m-2">
+        <h5 class="p-4">Javascript.cshtml</h5>
+        <img src="~/Images/MVC/RightScreen1.svg" style="max-width: 200px" />
+        <pre>
+        <code>
+&lt;form asp-controller=<a class="text-primary">"Home"</a> asp-action=<a class="text-primary">"Javascript"</a>&gt;
+
+ &lt;input class="form-control mr-sm-2 topBotMarg " name=<a class="text-danger">"searchBar"</a><br /> type="text" placeholder="Search..." aria-label="Search"&gt;
+
+&lt;/form&gt;
+        </code>
+</pre>
+
+        <div class="border p-3 bg-light m-2">
+            Note: The search bar must be incased in a form tag
+        </div>
+    </div>
+
+    @*else page on the javascript page*@
+
+    <div class="border p-3 bg-light m-2">
+        <code>
+            <pre style="white-space:pre-line">
+    else
+    {
+    &lt;partial name="~/Views/Home/PartialJavascript/_PageNotFoundPartial.cshtml" /&gt;
+    }
+       </pre>
+        </code>
+        Note: The Javascript.cshtml has to have this else statement to display error message if page is not found
+    </div>
+
+
+    <div class="border p-3 bg-light m-2">
+
+        <img src="~/Images/MVC/SQLData.svg" style="max-width: 250px" />
+
+        <div class="border p-3 bg-light m-2">
+            Note: The Database has to match the https Id in order to be displayed
+        </div>
+    </div>

@@ -1,0 +1,17 @@
+﻿
+<h2 class="text-center p-4">Working with String</h2>
+
+<div class="border p-3 bg-light m-2">
+ var phrase = "Hello";
+</div>
+
+<div class="border p-3 bg-light m-2">
+    document.write(phrase.toUpperCase());  <p class="text-info">Output: HELLO</p> <br />
+    document.write(phrase.toLowerCase());    <p class="text-info">Output: hello</p><br />
+    document.write(phrase.charAt(1));       <p class="text-info">Output: e </p><br />
+    document.write(phrase.IndexOf("l"));      <p class="text-info"> Output: 2 </p><br />
+    document.write(phrase.LastIndexOf("l"));       <p class="text-info">Output: 3 </p><br />
+    document.write(phrase.Substring(0,3));   <p class="text-info">Output: Hel</p><br />
+    document.write(phrase.Substring (phrase.IndexOf("H"), phrase.length));     <p class="text-info">Output: Hello</p><br />
+    document.write(phrase.Includes("Hello"));     <p class="text-info">Output: true</p><br />
+</div>
