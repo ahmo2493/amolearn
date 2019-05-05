@@ -14,7 +14,7 @@ namespace FirstProjectMVC.SQLinfo
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=tcp:amolearnserver.database.windows.net,1433;Initial Catalog=amoLearnDatabase;Persist Security Info=False;User ID=ahmo2493;Password=Spiodic10;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            optionsBuilder.UseSqlServer(@"Server= MyDatabase");
         }
     }
 }
